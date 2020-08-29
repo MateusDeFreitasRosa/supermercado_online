@@ -61,9 +61,7 @@ class _ListStoresScreenState extends State<ListStoresScreen> {
     return  Container(
         child: RefreshIndicator(
           child: ListView.builder(
-              itemCount: _doubleStores == null
-                  ? 1
-                  : _doubleStores.length == 0
+              itemCount: _doubleStores == null ||  _doubleStores.length == 0
                   ? 1
                   : _doubleStores.length,
               itemBuilder: (BuildContext context, int index) {
@@ -72,9 +70,14 @@ class _ListStoresScreenState extends State<ListStoresScreen> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          height: 70,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+                            color: Colors.deepPurple[300],
+                          ),
+                          height: 59,
                           child: Padding(
                             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+
                             child: TextField(
                               style: TextStyle(
                                 color: Colors.white,
@@ -105,14 +108,17 @@ class _ListStoresScreenState extends State<ListStoresScreen> {
                                 prefixIcon: Icon(
                                   Icons.search,
                                   color: Colors.white,
+                                  size: 15,
                                 ),
+                                
                                 hintText: 'Procurar uma loja',
                                 hintStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.white
+                                  fontSize: 14,
+                                  color: Colors.white70,
+                                  height: .5,
                                 ),
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
+
                                 )
                               ),
                             ),

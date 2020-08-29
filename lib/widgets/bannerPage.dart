@@ -64,13 +64,17 @@ class _BannerPageState extends State<BannerPage> with TickerProviderStateMixin{
       end: 0.0,
     ).animate(_controllerAnimation);
 
-    Future.delayed(const Duration(seconds: 5), () {
-      ativateControllerCrescent();
-      Future.delayed(const Duration(seconds: 3), () {
-        allowClick = true;
-        openClose = true;
+    try {
+      Future.delayed(const Duration(seconds: 5), () {
+        ativateControllerCrescent();
+        Future.delayed(const Duration(seconds: 3), () {
+          allowClick = true;
+          openClose = true;
+        });
       });
-    });
+    }catch(e) {
+
+    }
 
     super.initState();
   }
@@ -178,7 +182,7 @@ class _BannerPageState extends State<BannerPage> with TickerProviderStateMixin{
                         'Telefone: '+ widget.store.phoneNumber,
                         maxLines: 4,
                         style: TextStyle(
-                            fontSize: 14 + (_controller.value * 2)
+                            fontSize: 13 + (_controller.value * 2)
                         ),
                       ),
                     ),

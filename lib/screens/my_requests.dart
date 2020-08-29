@@ -86,7 +86,6 @@ class _MyRequestsState extends State<MyRequests> {
   }
 
   var styleText = TextStyle(
-      color: Colors.white,
       fontSize: 20,
       fontWeight: FontWeight.bold
   );

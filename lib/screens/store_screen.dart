@@ -82,13 +82,17 @@ class _StoreScreenState extends State<StoreScreen> {
       inAsyncCall: _progress,
       child: Scaffold(
 
-        floatingActionButton: FloatingActionButton(
-          elevation: 2,
-          backgroundColor: Colors.deepPurple,
-          child: Icon(Icons.add_shopping_cart, color: Colors.white,),
-          onPressed: () {
-            open_card_store(context: context,storeID: widget.store.id);
-          },
+        floatingActionButton: Stack(
+          children: [
+            FloatingActionButton(
+              elevation: 2,
+              backgroundColor: Colors.deepPurple,
+              child: Icon(Icons.add_shopping_cart, color: Colors.white,),
+              onPressed: () {
+                open_card_store(context: context,storeID: widget.store.id);
+              },
+            ),
+          ],
         ),
         body: RefreshIndicator(
           onRefresh: () {
@@ -102,7 +106,6 @@ class _StoreScreenState extends State<StoreScreen> {
                   child: BannerPage(store: widget.store,),
                 ),
                 Container(
-
                     child: Column(
                       children: <Widget>[
                         Padding(

@@ -49,7 +49,6 @@ class _ProfileState extends State<Profile> {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
                         ),
                       ),
                       Text(
@@ -57,7 +56,6 @@ class _ProfileState extends State<Profile> {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
                         ),
                       ),
                       Text(
@@ -65,7 +63,6 @@ class _ProfileState extends State<Profile> {
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white
                         ),
                       ),
                     ],
@@ -75,7 +72,7 @@ class _ProfileState extends State<Profile> {
             enderecos.add(
               SizedBox(
                 height: 10,
-                child: Divider(thickness: 1, color: Colors.white,),
+                child: Divider(thickness: 1, color: Colors.black,),
               ),
             );
           });
@@ -94,8 +91,7 @@ class _ProfileState extends State<Profile> {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white
-                      ),
+                       ),
                     ),
                   ],
                 ),
@@ -104,7 +100,7 @@ class _ProfileState extends State<Profile> {
           enderecos.add(
             SizedBox(
               height: 10,
-              child: Divider(thickness: 1, color: Colors.white,),
+              child: Divider(thickness: 1, color: Colors.black,),
             ),
           );
         });
@@ -166,7 +162,6 @@ class _ProfileState extends State<Profile> {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white
                           ),
                         ),
                         Text(
@@ -174,7 +169,7 @@ class _ProfileState extends State<Profile> {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white
+
                           ),
                         ),
                         Text(
@@ -182,7 +177,7 @@ class _ProfileState extends State<Profile> {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white
+
                           ),
                         ),
                       ],
@@ -192,7 +187,7 @@ class _ProfileState extends State<Profile> {
               enderecos.add(
                 SizedBox(
                   height: 10,
-                  child: Divider(thickness: 1, color: Colors.white,),
+                  child: Divider(thickness: 1, color: Colors.black,),
                 ),
               );
             });
@@ -207,50 +202,26 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      child: Material(
-                        borderRadius: BorderRadius.circular(20),
-                        elevation: 2,
-                        color: Colors.orangeAccent,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                          child: Text(
-                            'Perfil',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                                letterSpacing: 3,
-                                fontStyle: FontStyle.italic
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Material(
-                        color: Colors.white70,
-                        borderRadius: BorderRadius.circular(10),
-                        child: FlatButton(
-                          onPressed: ()  async{
-                            final user = await _fireAuth.currentUser();
-                            if (user != null) {
-                              Navigator.popAndPushNamed(context, WelcomeScreen.id);
-                            }
-                          },
+                Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        child: Material(
+                          borderRadius: BorderRadius.circular(20),
+                          elevation: 2,
+                          color: Colors.orangeAccent,
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                             child: Text(
-                              'Sair',
+                              'Perfil',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
@@ -261,8 +232,36 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        alignment: Alignment.center,
+                        child: Material(
+                          color: Colors.white,
+                          elevation: 2,
+                          borderRadius: BorderRadius.circular(10),
+                          child: FlatButton(
+                            onPressed: ()  async{
+                              final user = await _fireAuth.currentUser();
+                              if (user != null) {
+                                Navigator.popAndPushNamed(context, WelcomeScreen.id);
+                              }
+                            },
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                              child: Text(
+                                'Sair',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                    letterSpacing: 3,
+                                    fontStyle: FontStyle.italic
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
 
                 SizedBox(height: 30,),
@@ -274,7 +273,6 @@ class _ProfileState extends State<Profile> {
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white
                     ),
                   ),
                 ),
@@ -285,7 +283,6 @@ class _ProfileState extends State<Profile> {
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white
                     ),
                   ),
                 ),
@@ -296,7 +293,6 @@ class _ProfileState extends State<Profile> {
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white
                     ),
                   ),
                 ),
@@ -327,7 +323,7 @@ class _ProfileState extends State<Profile> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white70)
+                    border: Border.all(color: Colors.black)
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -342,7 +338,7 @@ class _ProfileState extends State<Profile> {
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 20),
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white),
+                      border: Border.all(color: Colors.black),
                       color: Colors.white12
                     ),
                     child: Column(
@@ -357,7 +353,6 @@ class _ProfileState extends State<Profile> {
                             decoration: InputDecoration(
                               hintText: 'Logradouro',
                                 hintStyle: TextStyle(
-                                  color: Colors.white,
                                   fontSize: 16
                                 ),
                                 enabledBorder: OutlineInputBorder(
@@ -367,7 +362,6 @@ class _ProfileState extends State<Profile> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white
                             ),
                           ),
                         ),
@@ -381,7 +375,6 @@ class _ProfileState extends State<Profile> {
                             decoration: InputDecoration(
                                 hintText: 'Numero',
                                 hintStyle: TextStyle(
-                                    color: Colors.white,
                                     fontSize: 16
                                 ),
                                 enabledBorder: OutlineInputBorder(
@@ -391,7 +384,6 @@ class _ProfileState extends State<Profile> {
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white
                             ),
                           ),
                         ),
@@ -405,7 +397,6 @@ class _ProfileState extends State<Profile> {
                             decoration: InputDecoration(
                                 hintText: 'Bairro',
                                 hintStyle: TextStyle(
-                                    color: Colors.white,
                                     fontSize: 16
                                 ),
                                 enabledBorder: OutlineInputBorder(
@@ -415,7 +406,6 @@ class _ProfileState extends State<Profile> {
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white
                             ),
                           ),
                         ),

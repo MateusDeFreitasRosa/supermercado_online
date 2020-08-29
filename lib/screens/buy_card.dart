@@ -267,13 +267,13 @@ class _BuyCardState extends State<BuyCard> {
               SizedBox(height: 10,),
               Material(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.white10,
+                color: Colors.white,
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Text(
                     'Carrinho de compra',
                     style: TextStyle(
-                      color: Colors.green,
+                      color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.bold
                     ),
@@ -295,7 +295,6 @@ class _BuyCardState extends State<BuyCard> {
                             child: Text(
                               'Aguarde um instante...',
                               style: TextStyle(
-                                  color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16
                               ),
@@ -355,7 +354,6 @@ class _BuyCardState extends State<BuyCard> {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white70,
                       ),
                     ),
                   ),
@@ -370,7 +368,6 @@ class _BuyCardState extends State<BuyCard> {
                       Text(
                         'Dinheiro',
                         style: TextStyle(
-                            color: Colors.white70,
                             fontWeight: FontWeight.bold,
                             fontSize: 16
                         ),
@@ -394,7 +391,6 @@ class _BuyCardState extends State<BuyCard> {
                       Text(
                         'Cartão',
                         style: TextStyle(
-                            color: Colors.white70,
                             fontWeight: FontWeight.bold,
                             fontSize: 16
                         ),
@@ -431,11 +427,9 @@ class _BuyCardState extends State<BuyCard> {
                           hintStyle: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white70,
                           ),
                         ),
                         style: TextStyle(
-                          color: Colors.white,
                           fontSize: 17,
                         ),
                       )
@@ -472,7 +466,6 @@ class _BuyCardState extends State<BuyCard> {
                     hint: Text(
                         "Endereço de entrega",
                       style: TextStyle(
-                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 16
                       ),

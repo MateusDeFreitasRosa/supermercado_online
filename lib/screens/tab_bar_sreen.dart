@@ -33,10 +33,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static  List<Widget> _widgetOptions = <Widget>[
     ListStoresScreen(),
-    Text(
-      'Index 1: Search',
-      style: optionStyle,
-    ),
+
     MyRequests(),
     Profile(),
   ];
@@ -58,15 +55,14 @@ class _TabBarScreenState extends State<TabBarScreen> {
       bottomNavigationBar: SafeArea(
         child: Material(
           elevation: 2,
-          color: Colors.tealAccent[400],
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+          color: Color(0xffF2F2F2),
           child: Padding(
             padding: EdgeInsets.all(10),
             child: GNav(
                 gap: 8,
                 activeColor: Colors.white,
                 iconSize: 24,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
                 duration: Duration(milliseconds: 800),
                 tabBackgroundColor: Colors.deepPurple[300],
                 tabs: [
@@ -74,10 +70,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
                     icon: Icons.store,
                     text: 'Lojas',
                   ),
-                  GButton(
-                    icon: Icons.search,
-                    text: 'Buscar',
-                  ),
+
                   GButton(
                     icon: Icons.motorcycle,
                     text: 'Pedidos',

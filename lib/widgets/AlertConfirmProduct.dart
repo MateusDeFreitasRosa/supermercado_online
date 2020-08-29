@@ -111,7 +111,7 @@ class __ContentState extends State<_Content> {
         ),
         Carousell(products: widget.products,),
         Padding(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.only(top: 10, bottom: 10),
           child: Material(
             elevation: 2,
             color: Colors.white12,
@@ -187,12 +187,9 @@ class __BoxAmountState extends State<_BoxAmount> {
     return Container(
       child: Row(
         children: [
-          IconButton(
-            iconSize: 16,
-            padding: EdgeInsets.all(0),
-
-            icon: Icon(Icons.remove),
-            onPressed: () {
+          InkWell(
+           child: Icon(Icons.remove, size: 16,),
+            onTap: () {
               if (qnt>=2) {
                 setState(() {
                   qnt--;
@@ -207,6 +204,7 @@ class __BoxAmountState extends State<_BoxAmount> {
             child: Material(
               borderRadius: BorderRadius.circular(40),
               child: TextField(
+                readOnly: true,
                 controller: _controller,
                 onChanged: (value) {
                   if (int.parse(value) < 1) {
@@ -235,16 +233,16 @@ class __BoxAmountState extends State<_BoxAmount> {
               ),
             ),
           ),
-          IconButton(
-            iconSize: 16,
-            icon: Icon(Icons.plus_one),
-            onPressed: () {
+          InkWell(
+            child: Icon(Icons.plus_one, size: 16,),
+            onTap: () {
               setState(() {
                 qnt++;
               });
               widget.notifyParent(qnt);
             },
           ),
+          SizedBox(width: 10,)
         ],
       ),
     );

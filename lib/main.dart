@@ -37,7 +37,7 @@ class _supermercado_virtualState extends State<supermercado_virtual> {
       theme: ThemeData(
         primaryColorDark: Color(0xff2E2E2E),
         primaryColorLight: Color(0xffE6E6E6),
-        scaffoldBackgroundColor: Color(0xff2E2E2E),
+        scaffoldBackgroundColor: Colors.white.withAlpha(210),
       ),
       initialRoute: WelcomeScreen.id,
 
